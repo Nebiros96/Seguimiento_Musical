@@ -1,4 +1,4 @@
--- Consulta de prueba para traer total de canciones escuchadas por hora y día de la semana
+-- Consulta de prueba para traer total de canciones escuchadas por hora y dÃ­a de la semana
 
 WITH Group_by_custom AS
 	(
@@ -28,9 +28,8 @@ GROUP BY
 ORDER BY 
 	Reproducciones DESC;
 
--- Consulta para añadir los campos de fecha a la tabla leída del csv
+-- Consulta para aÃ±adir los campos de fecha a la tabla leÃ­da del csv
 
-/* 
 	SELECT [Album],
       [Song],
       [Fecha],
@@ -45,4 +44,4 @@ ORDER BY
 	  DATENAME(WEEKDAY, Fecha) AS [WeekDay]
 	INTO Scrobblings_fix
   FROM [musica_julian].[dbo].[Brenoritvrezork]; 
-*/
+
