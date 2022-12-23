@@ -72,14 +72,21 @@ GROUP BY
 ),
 SubNested_cte AS (
 SELECT
-	Artist, MIN(RN) AS Best_rank, COUNT(Artist) AS Times_into_top5, SUM(Reps) AS Plays_in_top5, MAX(Year_Month) AS Last_Month, MAX(Reps) Plays_record
+	Artist, 
+	MIN(RN) AS Best_rank, 
+	COUNT(Artist) AS Times_into_top5, 
+	SUM(Reps) AS Plays_in_top5, 
+	MAX(Year_Month) AS Last_Month, 
+	MAX(Reps) Plays_record
 FROM
 	Nested_cte
-WHERE RN < 6
+WHERE 
+	RN < 6
 GROUP BY 
-	Artist)
+	Artist
+	)
 
 SELECT * FROM SubNested_cte
 ORDER BY 
-	Times_into_top5 DESC
+	Times_into_top5 DESC;
 
