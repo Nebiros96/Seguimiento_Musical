@@ -2,6 +2,7 @@
 -- Consulta para añadir los campos de fecha a la tabla leída del csv
 
 SELECT 
+	[Artist],
 	[Album],
 	[Song],
 	[Fecha],
