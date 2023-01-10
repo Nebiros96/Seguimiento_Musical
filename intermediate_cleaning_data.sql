@@ -208,7 +208,30 @@ UPDATE Scrobblings_fix
 UPDATE Scrobblings_fix
 	SET Album = REPLACE(Album, 'Deicide (Reissue)','Deicide')
 	WHERE Artist = 'Deicide'
+-- Luna
+UPDATE Scrobblings_fix
+	SET Artist = REPLACE(Artist, 'Luna', N'Луна')
+	WHERE Artist = 'Luna'
+-- Monethochka
+UPDATE Scrobblings_fix
+	SET Artist = REPLACE(Artist, 'MONETOCHKA', N'Монеточка')
+	WHERE Artist = 'MONETOCHKA'
+-- Grechka
+UPDATE Scrobblings_fix
+	SET Artist = REPLACE(Artist, 'Grechka', N'Гречка')
+	WHERE Artist = 'Grechka'
+-- Мы 
+UPDATE Scrobblings_fix
+	SET Artist = REPLACE(Artist, 'My', N'Мы')
+	WHERE Artist = 'My'
+-- Свидание
+UPDATE Scrobblings_fix
+	SET Artist = REPLACE(Artist, 'Svidaniye', N'Свидание')
+	WHERE Artist = 'Svidaniye'
 
 -- Eliminamos posibles L-Strings en el nombre de las canciones
 UPDATE Scrobblings_fix
 SET Song = LTRIM(Song);
+
+-- Eliminamos fechas cuyos campos sean NULL para evitar ruido en PBI
+DELETE FROM Scrobblings_fix WHERE Fecha IS NULL;
