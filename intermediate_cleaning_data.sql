@@ -65,6 +65,15 @@ UPDATE Scrobblings_fix
 UPDATE Scrobblings_fix
 	SET Album = REPLACE(Album, 'System Of A Down (Bonus Pack)','System of a Down')
 	WHERE Artist = 'System of a Down'
+UPDATE Scrobblings_fix
+	SET	Song = REPLACE(Song, 'System Of A Down  ', '')
+	WHERE Artist = 'System of a Down'
+UPDATE Scrobblings_fix
+	SET	Song = REPLACE(Song, 'System Of  A Down   ', '')
+	WHERE Artist = 'System of a Down'
+UPDATE Scrobblings_fix
+	SET	Song = REPLACE(Song, 'System of a down ', '')
+	WHERE Artist = 'System of a Down'
 -- Rompeprop
 UPDATE Scrobblings_fix
 	SET Song = REPLACE(Song, 'ROMPEPROP - ','')
@@ -228,6 +237,16 @@ UPDATE Scrobblings_fix
 UPDATE Scrobblings_fix
 	SET Artist = REPLACE(Artist, 'Svidaniye', N'Свидание')
 	WHERE Artist = 'Svidaniye'
+-- Metallica
+UPDATE Scrobblings_fix
+	SET Song = REPLACE(Song, ' - Remastered', '')
+	WHERE Artist = 'Metallica'
+UPDATE Scrobblings_fix
+	SET	Song = REPLACE(Song, 'Metallica - ', '')
+	WHERE Artist = 'Metallica'
+UPDATE Scrobblings_fix
+	SET	Song = REPLACE(Song, 'Metallica  ', '')
+	WHERE Artist = 'Metallica'
 
 -- Eliminamos posibles L-Strings en el nombre de las canciones
 UPDATE Scrobblings_fix
