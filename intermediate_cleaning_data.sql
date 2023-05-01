@@ -251,6 +251,11 @@ UPDATE Scrobblings_fix
 UPDATE Scrobblings_fix
 	SET Artist = REPLACE(Artist, 'Imperial Crystalline Entombment I.C.E', 'Imperial Crystalline Entombment')
 	WHERE Artist = 'Imperial Crystalline Entombment I.C.E'
+-- Mirele por Mirèle
+UPDATE Scrobblings_fix
+	SET Artist = REPLACE(Artist, 'Mirele', 'Mirèle')
+	WHERE Artist = 'Mirele'
+
 -- Eliminamos posibles L-Strings en el nombre de las canciones
 UPDATE Scrobblings_fix
 SET Song = LTRIM(Song);
