@@ -29,7 +29,7 @@ ORDER BY
 	Reproducciones DESC;
   
 -- Consulta para traer artistas con más apariciones en un Top N y datos adicionales 
-
+DECLARE @TopN INT = 6;
 WITH Monthly_Records AS 
 	(
 	SELECT 
@@ -64,7 +64,7 @@ SELECT
 FROM
 	Nested_cte
 WHERE 
-	RN < 6
+	RN < @TopN
 GROUP BY 
 	Artist
 	)
