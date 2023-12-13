@@ -1,12 +1,10 @@
 -- Borramos e importamos el csv a SQL Server con el nombre de [Brenoritvrezork]
-DROP TABLE Brenoritvrezork
--- Leemos datos del csv importado
-SELECT * FROM Brenoritvrezork
--- Consulta para añadir los campos de fecha a la tabla leída del csv
+DROP TABLE Brenoritvrezork;
+-- Leemos datos del csv importado y eliminamos fechas nulas
+SELECT * FROM Brenoritvrezork;
 
--- visualizamos la tabla rapidamente
-SELECT * FROM Scrobblings_fix
-ORDER BY Fecha;
+DELETE FROM Brenoritvrezork
+WHERE Fecha IS NULL;
 
 -- Borramos datos sin eliminar tabla
 TRUNCATE TABLE Scrobblings_fix;
@@ -28,3 +26,6 @@ SELECT
 	FORMAT(Fecha, 'yyyy-MM-dd') AS Year_Month_Day,
 	DATENAME(WEEKDAY, Fecha) AS [WeekDay]
 FROM [musica_julian].[dbo].[Brenoritvrezork];
+
+-- Leemos
+SELECT * FROM Scrobblings_fix;
